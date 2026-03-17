@@ -23,7 +23,7 @@ const NAV = [
   { id:"home",       icon:"🏠", label:"Home"  },
   { id:"learn",      icon:"📚", label:"Learn" },
   { id:"quiz",       icon:"🧠", label:"Quiz"  },
-  { id:"dictionary", icon:"📖", label:"Dict"  },
+  { id:"dictionary", icon:"📖", label:"Dictionary"  },
   { id:"voice",      icon:"🎙️", label:"Speak" },
   { id:"progress",   icon:"📊", label:"Me"    },
 ];
@@ -827,7 +827,7 @@ function Home({ dialect, setScreen, dialectStats, onSwitch, user, apiKey }) {
           <p style={{ color:B.inkLight, fontSize:13, fontStyle:"italic", background:B.purplePale, padding:"8px 12px", borderRadius:10, margin:0 }}>{'"'+wod.example+'"'}</p>
         </Card>
         <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
-          {[{label:"📚 Learn",sub:"All lessons",color:B.purple,s:"learn"},{label:"🧠 Quiz",sub:"Test yourself",color:"#7C3AED",s:"quiz"},{label:"📖 Dict",sub:getAllWords(dialect).length+" words",color:B.purpleDark,s:"dictionary"},{label:"🎙️ Speak",sub:"Practice aloud",color:"#5B21B6",s:"voice"}].map(item=>(
+          {[{label:"📚 Learn",sub:"All lessons",color:B.purple,s:"learn"},{label:"🧠 Quiz",sub:"Test yourself",color:"#7C3AED",s:"quiz"},{label:"📖 Dictionary",sub:getAllWords(dialect).length+" words",color:B.purpleDark,s:"dictionary"},{label:"🎙️ Speak",sub:"Practice aloud",color:"#5B21B6",s:"voice"}].map(item=>(
             <button key={item.s} onClick={()=>setScreen(item.s)} onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.04)";}} onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)";}}
               style={{ background:"linear-gradient(135deg,"+item.color+","+item.color+"cc)", border:"none", borderRadius:18, padding:"20px 16px", cursor:"pointer", textAlign:"left", boxShadow:"0 4px 20px "+item.color+"33", transition:"transform 0.15s" }}>
               <p style={{ color:"#fff", fontWeight:800, fontSize:17, margin:"0 0 4px" }}>{item.label}</p>
